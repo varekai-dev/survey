@@ -3,13 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #FFF0F0;
+  --background: #fff0f0;
   --foreground: #333333;
-  --blue: #EAEEF7;
-  --white: #FAFAFA;
-  --border-light:  #E0E0E0;
-  --border-dark: #E6E6E6;
-
+  --blue: #eaeef7;
+  --white: #fafafa;
+  --border-light: #e0e0e0;
+  --border-dark: #e6e6e6;
 }
 
 body {
@@ -18,7 +17,7 @@ body {
   font-size: 14px;
 }
 
-h1{
+h1 {
   font-weight: 700;
   font-size: 24px;
 }
@@ -28,4 +27,3 @@ h1{
     text-wrap: balance;
   }
 }
-
