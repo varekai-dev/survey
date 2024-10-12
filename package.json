@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
-    "postinstall": "husky install",
+    "postinstall": "husky init",
     "eslint": "npx eslint . --fix",
     "pre-commit": "lint-staged"
   },
