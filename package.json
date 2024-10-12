@@ -7,10 +7,20 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "postinstall": "husky install",
+    "eslint": "npx eslint . --fix",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write .",
+      "eslint --max-warnings 0 ."
+    ]
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.8",
+    "husky": "^9.1.6",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18",
@@ -26,6 +36,7 @@
     "eslint-config-next": "14.2.15",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-tailwindcss": "^3.17.5",
+    "lint-staged": "^15.2.10",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
