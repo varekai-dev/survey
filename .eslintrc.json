@@ -11,13 +11,14 @@
   "plugins": ["@typescript-eslint/eslint-plugin", "simple-import-sort", "tailwindcss"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
     "simple-import-sort/imports": [
       "error",
       {
         "groups": [
           ["^react"],
           ["^next"],
-          ["^@/shared/components", "@/shared/ui", "modules", "@/app"],
+          ["^@/shared/components", "@/shared/ui", "@/store", "@/types", "modules", "@/app"],
           ["^@?\\w"],
           ["@/(.*)"],
           ["^[./]"]
