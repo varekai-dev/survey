@@ -1,6 +1,5 @@
-import { QuestionInfo } from './question/questionInfo'
-import { QuestionSingleSelect } from './question/questionSingleSelect'
+import { InfoScreen, SingleSelectScreen } from './screen'
 
 export interface Survey {
-  questions: (QuestionInfo | QuestionSingleSelect)[]
+  screens: (InfoScreen | SingleSelectScreen)[]
 }

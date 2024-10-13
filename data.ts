@@ -1,5 +1,5 @@
 export const data = {
-  questions: [
+  screens: [
     {
       id: 1,
       slug: 'gender',

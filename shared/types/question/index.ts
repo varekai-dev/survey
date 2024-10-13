@@ -1,5 +1,0 @@
-export type { BaseQuestion } from './baseQuestion'
-export type { QuestionSingleSelect } from './questionSingleSelect'
-export type { QuestionInfo } from './questionInfo'
-export { QuestionType } from './questionType'
-export type { QuestionAnswer } from './questionAnswer'

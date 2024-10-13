@@ -1,9 +1,9 @@
-import { QuestionType } from './questionType'
+import { ScreenType } from './screenType'
 
-export interface BaseQuestion {
+export interface BaseScreen {
   id: number
   slug: string
-  type: QuestionType
+  type: ScreenType
   question: string
   dependsOnAnswer?: {
     id: number
