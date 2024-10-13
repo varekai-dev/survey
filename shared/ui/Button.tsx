@@ -13,7 +13,7 @@ export const Button: React.FC<React.PropsWithChildren<Props>> = ({ className, ch
     <button
       onClick={onClick}
       className={cn(
-        'bg-primary flex w-[330px] items-center justify-center rounded-2xl py-[22px] shadow-base',
+        'bg-primary flex w-[330px] items-center justify-center rounded-2xl py-[22px] shadow-base transition duration-300 active:translate-y-1',
         className,
         {
           'bg-button-gradient text-white': active,
