@@ -7,8 +7,10 @@
   --foreground: #333333;
   --blue: #eaeef7;
   --white: #fafafa;
+  --ghost-white: #fbfbff;
   --border-light: #e0e0e0;
   --border-dark: #e6e6e6;
+  --purple: #6a3aa2;
 }
 
 body {

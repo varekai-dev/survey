@@ -1,0 +1,1 @@
+export { useGetNextSlug } from './useGetNextSlug'

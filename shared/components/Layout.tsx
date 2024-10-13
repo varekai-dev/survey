@@ -5,14 +5,14 @@ import { Header } from './Header'
 
 interface Props {
   className?: string
-  showBack: boolean
+  showBack?: boolean
   darkMode?: boolean
 }
 
 export const Layout: React.FC<React.PropsWithChildren<Props>> = ({
   className,
   children,
-  showBack,
+  showBack = false,
   darkMode = false,
 }) => {
   return (

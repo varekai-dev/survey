@@ -8,6 +8,8 @@ const config: Config = {
       foreground: 'var(--foreground)',
       blue: 'var(--blue)',
       white: 'var(--white)',
+      purple: 'var(--purple)',
+      ['ghost-white']: 'var(--ghost-white)',
     },
     extend: {
       boxShadow: {

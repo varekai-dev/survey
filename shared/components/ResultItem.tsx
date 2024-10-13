@@ -15,7 +15,7 @@ interface Props {
 export const ResultItem: React.FC<Props> = ({ className, answer }) => {
   const question = useGetQuestionWithVariables(answer.question, answer.variables)
   return (
-    <div className={cn('rounded-md bg-white p-3', className)} key={answer.slug}>
+    <div className={cn('w-full rounded-md bg-white p-3', className)} key={answer.slug}>
       <p className="font-bold">{question}</p>
       <p>- {answer.answer}</p>
     </div>

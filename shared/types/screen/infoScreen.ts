@@ -6,5 +6,7 @@ export interface IInfoScreen extends IBaseScreen {
   variables: never
   answers: never
   additionalText: never
+  title: string
   description: string
+  nextQuestionSlug?: string
 }

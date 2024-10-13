@@ -34,6 +34,7 @@ export const SingleSelectScreen: React.FC<Props> = ({ className, data }) => {
       }),
     )
     let slug
+
     if (data.lastScreen) {
       slug = '/survey/results'
     } else {
