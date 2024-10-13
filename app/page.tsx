@@ -1,7 +1,5 @@
-import { redirect } from 'next/navigation'
+import { redirectToFirstQuestion } from '@/shared/utils'
 
 export default async function Home() {
-  const data = await import('../data.json')
-  const firstSlug = data.screens[0].slug
-  redirect(`/survey/screens/${firstSlug}`)
+  await redirectToFirstQuestion()
 }

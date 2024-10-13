@@ -1,4 +1,5 @@
 import { IVariable } from '@/shared/types'
+
 import { useAppSelector } from '@/store'
 
 export const useGetQuestionWithVariables = (question: string, variables?: IVariable) => {

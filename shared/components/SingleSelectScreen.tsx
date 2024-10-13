@@ -5,13 +5,13 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 
 import { useAppDispatch } from '@/store'
-
 import { addAnswer, useSelectAnswerBySlug } from '@/store/slices'
 
 import { useGetQuestionWithVariables } from '../../hooks'
 import type { IQuestionAnswer, ISingleSelectScreen } from '../types'
 import { Button } from '../ui'
 import { cn } from '../utils'
+import { Layout } from './Layout'
 
 interface Props {
   className?: string
@@ -48,20 +48,22 @@ export const SingleSelectScreen: React.FC<Props> = ({ className, data }) => {
   }
 
   return (
-    <div className={cn('mx-auto max-w-[330px]', className)}>
-      <h1 className="mb-[30px]">{question}</h1>
-      {data.additionalText && <p className="mb-[30px] text-center text-[18px] font-bold">{data.additionalText}</p>}
-      <div className="flex flex-col items-center gap-3">
-        {data.answers.map((answer) => (
-          <Button
-            key={answer.value}
-            onClick={() => handleClickButton(answer)}
-            active={storeAnswer?.answer === answer.value}
-          >
-            {answer.value}
-          </Button>
-        ))}
+    <Layout showBack={!data.firstScreen}>
+      <div className={cn('mx-auto max-w-[330px]', className)}>
+        <h1 className="mb-[30px]">{question}</h1>
+        {data.additionalText && <p className="mb-[30px] text-center text-[18px] font-bold">{data.additionalText}</p>}
+        <div className="flex flex-col items-center gap-3">
+          {data.answers.map((answer) => (
+            <Button
+              key={answer.value}
+              onClick={() => handleClickButton(answer)}
+              active={storeAnswer?.answer === answer.value}
+            >
+              {answer.value}
+            </Button>
+          ))}
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }

@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
 
-import { Layout } from '@/shared/components'
-
 import ReduxProvider from '@/store/redux-provider'
 
 import '../styles/globals.css'
@@ -26,7 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={openSans.className}>
         <ReduxProvider>
-          <Layout>{children}</Layout>
+          {children}
+          {/* <Layout></Layout> */}
         </ReduxProvider>
       </body>
     </html>

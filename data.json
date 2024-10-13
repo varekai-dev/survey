@@ -2,6 +2,7 @@
   "screens": [
     {
       "slug": "gender",
+      "firstScreen": true,
       "type": "singleSelect",
       "question": "Select your gender:",
       "nextQuestionSlug": "relationship-status",

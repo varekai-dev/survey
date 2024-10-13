@@ -3,7 +3,6 @@
 import React from 'react'
 
 import { useAppDispatch, useAppSelector } from '@/store'
-
 import { cleanSurveyState } from '@/store/slices'
 
 import { cn } from '../utils'
