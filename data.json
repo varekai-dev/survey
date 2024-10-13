@@ -1,5 +1,9 @@
 {
-  "screens": [
+  "surveys":{
+    "astrology-survey":{
+      "title": "Astrology Survey",
+      "slug":"astrology-survey",
+      "screens": [
     {
       "slug": "gender",
       "firstScreen": true,
@@ -357,4 +361,6 @@
       ]
     }
   ]
+    }
+  }
 }

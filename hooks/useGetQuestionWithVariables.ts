@@ -2,14 +2,21 @@ import { IVariable } from '@/shared/types'
 
 import { useAppSelector } from '@/store'
 
-export const useGetQuestionWithVariables = (question: string, variables?: IVariable) => {
+interface IQuestionWithVariables {
+  question: string
+  variables?: IVariable
+  surveySlug: string
+}
+
+export const useGetQuestionWithVariables = ({ question, variables, surveySlug }: IQuestionWithVariables) => {
   const surveyState = useAppSelector((state) => state.survey.surveyState)
+  const currentSurvey = surveyState?.[surveySlug]
   if (!variables) {
     return question
   }
 
   const variableValues = Object.entries(variables).reduce((acc: { [key: string]: string }, [variable, value]) => {
-    const answerFromState = surveyState.find((answer) => answer.slug === value.questionSlug)?.answer
+    const answerFromState = currentSurvey?.answers.find((answer) => answer.slug === value.questionSlug)?.answer
 
     const findInsertData = value.answers.find((answer) => answer.answer === answerFromState)
 
@@ -20,7 +27,7 @@ export const useGetQuestionWithVariables = (question: string, variables?: IVaria
   let result = question
 
   Object.entries(variableValues).forEach(([key, value]) => {
-    if (!value) {
+    if (typeof value === 'undefined') {
       return
     }
     result = result.replace(new RegExp(`{${key}}`, 'g'), value)

@@ -2,14 +2,14 @@ import { IInfoScreen } from '@/shared/types'
 
 import { useAppSelector } from '@/store'
 
-export const useGetNextSlug = (data: IInfoScreen['dependsOnAnswer']) => {
+export const useGetNextSlug = (data: IInfoScreen['dependsOnAnswer'], surveySlug: string) => {
   const surveyState = useAppSelector((state) => state.survey.surveyState)
 
-  if (!data) {
+  if (!data || !surveyState) {
     return
   }
 
-  const findAnswer = surveyState.find((answer) => answer.slug === data.slug)
+  const findAnswer = surveyState[surveySlug].answers.find((answer) => answer.slug === data.slug)
 
   if (!findAnswer) {
     return

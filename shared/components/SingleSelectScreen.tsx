@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 import { useAppDispatch } from '@/store'
 import { addAnswer, useSelectAnswerBySlug } from '@/store/slices'
@@ -19,16 +19,22 @@ interface Props {
 }
 
 export const SingleSelectScreen: React.FC<Props> = ({ className, data }) => {
+  const pathname = usePathname()
   const dispatch = useAppDispatch()
-  const storeAnswer = useSelectAnswerBySlug(data.slug)
+
+  const surveySlug = pathname.split('/')[2]
+
+  const storeAnswer = useSelectAnswerBySlug(data.slug, surveySlug)
+
   const router = useRouter()
-  const question = useGetQuestionWithVariables(data.question, data?.variables)
+  const question = useGetQuestionWithVariables({ question: data.question, variables: data?.variables, surveySlug })
 
   const handleClickButton = (answer: IQuestionAnswer) => {
     dispatch(
       addAnswer({
         question: data.question,
         answer: answer.value,
+        surveySlug,
         slug: data.slug,
         ...(data.variables && { variables: data.variables }),
       }),
@@ -36,7 +42,7 @@ export const SingleSelectScreen: React.FC<Props> = ({ className, data }) => {
     let slug
 
     if (data.lastScreen) {
-      slug = '/survey/results'
+      slug = `/surveys/${surveySlug}/results`
     } else {
       slug = answer.nextQuestionSlug || data.nextQuestionSlug
     }
@@ -55,11 +61,7 @@ export const SingleSelectScreen: React.FC<Props> = ({ className, data }) => {
         {data.additionalText && <p className="mb-[30px] text-center text-[18px] font-bold">{data.additionalText}</p>}
         <div className="flex flex-col items-center gap-3">
           {data.answers.map((answer) => (
-            <Button
-              key={answer.value}
-              onClick={() => handleClickButton(answer)}
-              active={storeAnswer?.answer === answer.value}
-            >
+            <Button key={answer.value} onClick={() => handleClickButton(answer)} active={storeAnswer === answer.value}>
               {answer.value}
             </Button>
           ))}

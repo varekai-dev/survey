@@ -1,8 +1,7 @@
 import { useAppSelector } from '../../'
 
-export const useSelectAnswerBySlug = (slug: string) => {
+export const useSelectAnswerBySlug = (slug: string, surveySlug: string) => {
   const surveyState = useAppSelector((state) => state.survey.surveyState)
-
-  const answer = surveyState?.find((answer) => answer.slug === slug)
-  return answer
+  const findSurvey = surveyState?.[surveySlug].answers.find((answer) => answer.slug === slug)
+  return findSurvey?.answer
 }
