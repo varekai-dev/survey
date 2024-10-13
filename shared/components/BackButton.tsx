@@ -2,22 +2,31 @@
 
 import React from 'react'
 
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+
+import { ChevronLeft } from '../assets/icons'
+import { cn } from '../utils'
 
 interface Props {
   className?: string
+  darkMode: boolean
 }
 
-export const BackButton: React.FC<Props> = ({ className }) => {
+export const BackButton: React.FC<Props> = ({ className, darkMode }) => {
   const router = useRouter()
 
   const handleClickBack = () => {
     router.back()
   }
+
   return (
     <button className={className} onClick={handleClickBack}>
-      <Image src="/assets/icons/chevron-left.svg" alt="back" width={24} height={24} />
+      <ChevronLeft
+        className={cn({
+          'text-white': darkMode,
+          'text-foreground': !darkMode,
+        })}
+      />
     </button>
   )
 }

@@ -54,16 +54,16 @@
           "answers": [
             {
               "answer": "Female",
-              "insert": "Female"
+              "insert": "female"
             },
             {
               "answer": "Male",
-              "insert": "Male"
+              "insert": "male"
             }
           ]
         },
         "hasChildren": {
-          "questionSlug": "parents",
+          "questionSlug": "single-parent",
           "answers": [
             {
               "answer": "Yes",
@@ -188,7 +188,7 @@
     {
       "type": "singleSelect",
       "slug": "in-a-relationship-problem",
-      "question": "{Gender} {who have children (if have children)} need a slightly different approach to improve their relationship. Which statement best describes you?",
+      "question": "{gender} {hasChildren} need a slightly different approach to improve their relationship. Which statement best describes you?",
       "nextQuestionSlug": "traits-tend-to-overthink",
       "answers": [
         {
@@ -200,7 +200,35 @@
         {
           "value": "I’m generally happy in my relationship"
         }
-      ]
+      ],
+      "variables": {
+        "gender": {
+          "questionSlug": "gender",
+          "answers": [
+            {
+              "answer": "Female",
+              "insert": "Female"
+            },
+            {
+              "answer": "Male",
+              "insert": "Male"
+            }
+          ]
+        },
+        "hasChildren": {
+          "questionSlug": "single-parent",
+          "answers": [
+            {
+              "answer": "Yes",
+              "insert": "who have children"
+            },
+            {
+              "answer": "No",
+              "insert": ""
+            }
+          ]
+        }
+      }
     },
     {
       "type": "singleSelect",
