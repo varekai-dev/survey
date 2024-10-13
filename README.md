@@ -6,6 +6,10 @@
 - `npm install`
 - `npm run dev` start project
 
+## Deployment
+
+You can view the live version of the project here: [Survey App on Vercel](https://survey-five-gilt.vercel.app/)
+
 # Survey System
 
 This project is designed to dynamically generate surveys based on a data.json file. The system supports multi-step surveys with conditional question flows and dynamic variables. Each survey consists of multiple screens, which can be either question pages (singleSelect) or informational pages (info).
