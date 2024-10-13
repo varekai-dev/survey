@@ -50,7 +50,7 @@ export const SingleSelectScreen: React.FC<Props> = ({ className, data }) => {
     if (slug) {
       setTimeout(() => {
         router.push(slug)
-      }, 400)
+      }, 200)
     }
   }
 
