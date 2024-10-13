@@ -19,7 +19,7 @@
         "groups": [
           ["^react"],
           ["^next"],
-          ["^@/shared/components", "@/shared/ui", "@/shared/types", "@/store", "modules", "@/app"],
+          ["^@/shared/components", "@/shared/ui", "@/shared/types", "@/shared/hooks", "@/store", "modules", "@/app"],
           ["^@?\\w"],
           ["@/(.*)"],
           ["^[./]"]

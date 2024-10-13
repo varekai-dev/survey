@@ -1,10 +1,13 @@
+import { IVariable } from '@/shared/types'
+
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 
-interface IStateAnswer {
+export interface IStateAnswer {
   slug: string
   question: string
   answer: string
+  variables?: IVariable
 }
 
 export interface ISurveyState {
@@ -29,7 +32,6 @@ export const surveySlice = createSlice({
           if (answer.slug === action.payload.slug) {
             return action.payload
           }
-
           return answer
         })
 
@@ -39,13 +41,6 @@ export const surveySlice = createSlice({
       } else {
         state.surveyState = [...currentState, action.payload]
       }
-    },
-    removeAnswer: (state, action: PayloadAction<string>) => {
-      const currentState = state.surveyState || []
-
-      const newState = currentState.filter((answer) => answer.slug !== action.payload)
-
-      state.surveyState = newState
     },
     cleanSurveyState: (state) => {
       state.surveyState = []

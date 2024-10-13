@@ -9,7 +9,7 @@ interface Props {
 
 export const Layout: React.FC<React.PropsWithChildren<Props>> = ({ className, children }) => {
   return (
-    <div className={cn('container mx-auto py-5', className)}>
+    <div className={cn('container mx-auto px-4 py-5', className)}>
       <Header className="mb-5" />
       {children}
     </div>

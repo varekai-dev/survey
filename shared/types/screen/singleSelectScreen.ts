@@ -9,4 +9,5 @@ export interface ISingleSelectScreen extends IBaseScreen {
   answers: IQuestionAnswer[]
   variables?: IVariable
   description: never
+  nextQuestionSlug?: string
 }

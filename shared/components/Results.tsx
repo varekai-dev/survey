@@ -2,25 +2,33 @@
 
 import React from 'react'
 
-import { useAppSelector } from '@/store'
+import { useAppDispatch, useAppSelector } from '@/store'
+
+import { cleanSurveyState } from '@/store/slices'
 
 import { cn } from '../utils'
+import { ResultItem } from './ResultItem'
 
 interface Props {
   className?: string
 }
 
 export const Results: React.FC<Props> = ({ className }) => {
+  const dispatch = useAppDispatch()
   const answers = useAppSelector((state) => state.survey.surveyState)
+
+  React.useEffect(() => {
+    return () => {
+      dispatch(cleanSurveyState())
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className={cn('flex flex-col gap-4', className)}>
-      {answers.map((answer) => (
-        <div className="rounded-md bg-white p-3" key={answer.slug}>
-          <p className="font-bold">{answer.question}</p>
-          <p>- {answer.answer}</p>
-        </div>
-      ))}
+      {answers.map((answer) => {
+        return <ResultItem key={answer.slug} answer={answer} />
+      })}
     </div>
   )
 }

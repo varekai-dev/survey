@@ -1,0 +1,1 @@
+export { useGetQuestionWithVariables } from './useGetQuestionWithVariables'
