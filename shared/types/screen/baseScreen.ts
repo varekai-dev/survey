@@ -1,15 +1,14 @@
 import { ScreenType } from './screenType'
 
-export interface BaseScreen {
-  id: number
+export interface IBaseScreen {
   slug: string
   type: ScreenType
   question: string
   dependsOnAnswer?: {
-    id: number
+    slug: string
     answers: Array<{
       value: string
-      nextQuestionId?: number
+      nextQuestionSlug: string
     }>
   }
 }

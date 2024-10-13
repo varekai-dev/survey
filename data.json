@@ -1,0 +1,366 @@
+{
+  "screens": [
+    {
+      "slug": "gender",
+      "type": "singleSelect",
+      "question": "Select your gender:",
+      "answers": [
+        {
+          "value": "Female",
+          "nextQuestionSlug": "relationship-status"
+        },
+        {
+          "value": "Male",
+          "nextQuestionSlug": "relationship-status"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "slug": "relationship-status",
+      "question": "So we can get to know you better, tell us about your relationship status.",
+      "answers": [
+        {
+          "value": "Single",
+          "nextQuestionSlug": "single-parent"
+        },
+        {
+          "value": "In a relationship",
+          "nextQuestionSlug": "parents"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "slug": "parents",
+      "question": "Are you a parent?",
+      "answers": [
+        {
+          "value": "Yes",
+          "nextQuestionSlug": "single-problem"
+        },
+        {
+          "value": "No",
+          "nextQuestionSlug": "single-problem"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "slug": "single-problem",
+      "question": "Single {gender} {who have children (if have children)} need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
+      "variables": {
+        "gender": {
+          "questionSlug": "gender",
+          "answers": [
+            {
+              "answer": "Female",
+              "insert": "Female"
+            },
+            {
+              "answer": "Male",
+              "insert": "Male"
+            }
+          ]
+        },
+        "{who have children (if have children)}": {
+          "questionsSlug": "parents",
+          "answers": [
+            {
+              "answer": "Yes",
+              "insert": "who have children"
+            },
+            {
+              "answer": "No",
+              "insert": ""
+            }
+          ]
+        }
+      },
+      "answers": [
+        {
+          "value": "I was unhappy with low things were going in my relationship",
+          "nextQuestionSlug": "partner-introvert-or-extrovert"
+        },
+        {
+          "value": "I was unhappy with parts of my relationship, but some thing were working",
+           "nextQuestionSlug": "partner-introvert-or-extrovert"
+        },
+        {
+          "value": "I was generally happy with my relationship",
+          "nextQuestionSlug": "partner-introvert-or-extrovert"
+        },
+        {
+          "value": "I’ve never been in a relationship",
+          "nextQuestionSlug": "partner-introvert-or-extrovert"
+        }
+      ]
+    },
+    {
+      "slug": "partner-introvert-or-extrovert",
+      "type": "singleSelect",
+      "question": "Is your partner an introvert or extrovert?",
+      "answers": [
+        {
+          "value": "Introvert",
+          "nextQuestionSlug": "partner-gender"
+        },
+        {
+          "value": "Extrovert",
+          "nextQuestionSlug": "partner-gender"
+        },
+        {
+          "value": "A bit of both",
+          "nextQuestionSlug": "partner-gender"
+        }
+      ]
+    },
+    {
+      "slug": "partner-gender",
+      "type": "singleSelect",
+      "question": "What is your partner’s gender?",
+      "answers": [
+        {
+          "value": "Male",
+          "nextQuestionSlug": "partner-priority"
+        },
+        {
+          "value": "Female",
+          "nextQuestionSlug": "partner-priority"
+        }
+      ]
+    },
+    {
+      "slug": "partner-priority",
+      "type": "singleSelect",
+      "question": "Do you agree with the statement below?",
+      "additionalText": "“My partner and I make sex a priority in our relationship”",
+      "answers": [
+        {
+          "value": "Strongly agree",
+          "nextQuestionSlug": "think-about-relationship-goals"
+        },
+        {
+          "value": "Agree",
+          "nextQuestionSlug": "think-about-relationship-goals"
+        },
+        {
+          "value": "Neutral",
+            "nextQuestionSlug": "think-about-relationship-goals"
+        },
+        {
+          "value": "Disagee",
+          "nextQuestionSlug": "think-about-relationship-goals"
+        },
+        {
+          "value": "Strongly disagree",
+          "nextQuestionSlug": "think-about-relationship-goals"
+        }
+      ]
+    },
+    {
+      "slug": "think-about-relationship-goals",
+      "type": "singleSelect",
+      "question": "When you think about your relationship goals, you feel...?",
+      "additionalInfo": "“My partner and I make sex a priority in our relationship”",
+      "answers": [
+        {
+          "value": "Strongly agree",
+          "nextQuestionSlug":  "relationship-about-us"
+        },
+        {
+          "value": "Agree",
+        "nextQuestionSlug":  "relationship-about-us"
+        },
+        {
+          "value": "Neutral",
+            "nextQuestionSlug":  "relationship-about-us"
+        },
+        {
+          "value": "Disagee",
+          "nextQuestionSlug":  "relationship-about-us"
+        },
+        {
+          "value": "Strongly disagree",
+          "nextQuestionSlug":  "relationship-about-us"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "slug": "single-parent",
+      "question": "Are you single parent?",
+      "answers": [
+        {
+          "value": "Yes",
+          "nextQuestionSlug": "in-a-relationship-problem"
+        },
+        {
+          "value": "No",
+          "nextQuestionSlug": "in-a-relationship-problem"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "slug": "in-a-relationship-problem",
+      "question": "{Gender} {who have children (if have children)} need a slightly different approach to improve their relationship. Which statement best describes you?",
+      "answers": [
+        {
+          "value": "I’m very unhappy with how things are going in my relationship",
+          "nextQuestionSlug": "traits-tend-to-overthink"
+        },
+        {
+          "value": "I’m unhappy with parts of my relationship, but some things are working well",
+          "nextQuestionSlug": "traits-tend-to-overthink"
+        },
+        {
+          "value": "I’m generally happy in my relationship",
+          "nextQuestionSlug": "traits-tend-to-overthink"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "slug": "traits-tend-to-overthink",
+      "question": "Do you tend to overthink?",
+      "answers": [
+        {
+          "value": "Yes",
+          "nextQuestionSlug": "how-it-works"
+        },
+        {
+          "value": "No",
+          "nextQuestionSlug": "how-it-works"
+        }
+      ]
+    },
+    {
+      "type": "info",
+      "slug": "how-it-works",
+      "question": "So how does it work?",
+      "description": "We analyze hundreds of data points to create your unique astrological blueprint. This is combined with AI to tailor-make your astrological insights, based on your answers. We’re going to change your relationship with astrology.",
+      "dependsOnAnswer": {
+        "slug": "traits-tend-to-overthink",
+        "answers":[ {
+          "value": "Yes",
+          "Yes": "traits-most-important",
+          "No": "traits-emotional-control"
+        }]
+      }
+    },
+    {
+      "type": "singleSelect",
+      "slug": "traits-most-important",
+      "question": "What is most important to you?",
+      "answers": [
+        {
+          "value": "Success",
+          "nextQuestionSlug": "relationship-about-us"
+        },
+        {
+          "value": "Romance",
+          "nextQuestionSlug": "relationship-about-us"
+        },
+        {
+          "value": "Stability",
+          "nextQuestionSlug": "relationship-about-us"
+        },
+        {
+          "value": "Freedom",
+          "nextQuestionSlug": "relationship-about-us"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "slug": "relationship-about-us",
+      "question": "Where did you hear about us?",
+      "answers": [
+        {
+          "value": "Poster or Billboard",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Friend or Family",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Instagram",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Direct Mail or Package Insert",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Online TV or Streaming TV",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "TV",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Search Engine (Google, Bing, etc.)",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Newspaper or Magazine",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Facebook",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Blog Post or Website Review",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Podcast",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Influencer",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Youtube",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Pinterest",
+          "nextQuestionSlug":"results"
+        },
+        {
+          "value": "Other",
+          "nextQuestionSlug":"results"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "slug": "traits-emotional-control",
+      "question": "Is emotional control tricky for you?",
+      "answers": [
+        {
+          "value": "Yes",
+          "nextQuestionSlug": "relationship-about-us"
+        },
+        {
+          "value": "Sometimes",
+          "nextQuestionSlug": "relationship-about-us"
+        },
+        {
+          "value": "Rarely",
+         "nextQuestionSlug": "relationship-about-us"
+        },
+        {
+          "value": "Not at all",
+          "nextQuestionSlug": "relationship-about-us"
+        }
+      ]
+    }
+  ]
+}

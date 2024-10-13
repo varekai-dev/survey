@@ -14,7 +14,7 @@ export const Header: React.FC<Props> = ({ className }) => {
       <header className="flex items-center justify-center">
         <BackButton className="w-1/3" />
         <div className="flex w-1/3 justify-center">
-          <Image src="assets/icons/logo.svg" alt="logo" width={24} height={24} />
+          <Image src="/assets/icons/logo.svg" alt="logo" width={24} height={24} />
         </div>
         <div className="w-1/3" />
       </header>

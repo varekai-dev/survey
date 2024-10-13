@@ -1,7 +1,7 @@
-import { BaseScreen } from './baseScreen'
+import { IBaseScreen } from './baseScreen'
 import { ScreenType } from './screenType'
 
-export interface InfoScreen extends BaseScreen {
+export interface IInfoScreen extends IBaseScreen {
   type: ScreenType.INFO
   variables: never
   answers: never

@@ -1,7 +1,7 @@
-export type Variable = Record<
+export type IVariable = Record<
   string,
   {
-    questionId: number
+    questionSlug: string
     answers: Array<{
       answer: string
       insert: string

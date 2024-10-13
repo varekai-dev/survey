@@ -1,4 +1,4 @@
-export interface QuestionAnswer {
+export interface IQuestionAnswer {
   value: string
-  nextQuestionId?: number
+  nextQuestionSlug: string
 }

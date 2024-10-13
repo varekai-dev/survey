@@ -1,4 +1,4 @@
-export type { BaseScreen } from './baseScreen'
-export type { InfoScreen } from './infoScreen'
-export type { SingleSelectScreen } from './singleSelectScreen'
+export type { IBaseScreen } from './baseScreen'
+export type { IInfoScreen } from './infoScreen'
+export type { ISingleSelectScreen } from './singleSelectScreen'
 export { ScreenType } from './screenType'

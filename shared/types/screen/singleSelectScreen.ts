@@ -1,12 +1,12 @@
-import { QuestionAnswer } from '../questionAnswer'
-import { Variable } from '../variable'
-import { BaseScreen } from './baseScreen'
+import { IQuestionAnswer } from '../questionAnswer'
+import { IVariable } from '../variable'
+import { IBaseScreen } from './baseScreen'
 import { ScreenType } from './screenType'
 
-export interface SingleSelectScreen extends BaseScreen {
+export interface ISingleSelectScreen extends IBaseScreen {
   type: ScreenType.SINGLE_SELECT
   additionalText?: string
-  answers: QuestionAnswer[]
-  variables?: Variable
+  answers: IQuestionAnswer[]
+  variables?: IVariable
   description: never
 }

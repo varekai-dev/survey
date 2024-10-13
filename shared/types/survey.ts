@@ -1,5 +1,5 @@
-import { InfoScreen, SingleSelectScreen } from './screen'
+import { IInfoScreen, ISingleSelectScreen } from './screen'
 
-export interface Survey {
-  screens: (InfoScreen | SingleSelectScreen)[]
+export interface ISurvey {
+  screens: (IInfoScreen | ISingleSelectScreen)[]
 }

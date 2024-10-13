@@ -1,0 +1,1 @@
+export { useSelectAnswerBySlug } from './useSelectAnswerBySlug'

@@ -17,7 +17,7 @@ export const BackButton: React.FC<Props> = ({ className }) => {
   }
   return (
     <button className={className} onClick={handleClickBack}>
-      <Image src="assets/icons/chevron-left.svg" alt="back" width={24} height={24} />
+      <Image src="/assets/icons/chevron-left.svg" alt="back" width={24} height={24} />
     </button>
   )
 }
