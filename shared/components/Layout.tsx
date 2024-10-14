@@ -7,6 +7,7 @@ interface Props {
   className?: string
   showBack?: boolean
   darkMode?: boolean
+  removeAnswerOnBack?: boolean
 }
 
 export const Layout: React.FC<React.PropsWithChildren<Props>> = ({
@@ -14,6 +15,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = ({
   children,
   showBack = false,
   darkMode = false,
+  removeAnswerOnBack = false,
 }) => {
   return (
     <div
@@ -22,7 +24,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = ({
       })}
     >
       <div className={cn('container mx-auto px-4 py-5', className)}>
-        <Header className="mb-5" showBack={showBack} darkMode={darkMode} />
+        <Header className="mb-5" showBack={showBack} darkMode={darkMode} removeAnswerOnBack={removeAnswerOnBack} />
         {children}
       </div>
     </div>

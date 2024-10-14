@@ -36,6 +36,7 @@ export const SingleSelectScreen: React.FC<Props> = ({ className, data }) => {
         answer: answer.value,
         surveySlug,
         slug: data.slug,
+        ...(data.additionalText && { additionalText: data.additionalText }),
         ...(data.variables && { variables: data.variables }),
       }),
     )
@@ -55,7 +56,7 @@ export const SingleSelectScreen: React.FC<Props> = ({ className, data }) => {
   }
 
   return (
-    <Layout showBack={!data.firstScreen}>
+    <Layout showBack={!data.firstScreen} removeAnswerOnBack>
       <div className={cn('mx-auto max-w-[330px]', className)}>
         <h1 className="mb-[30px]">{question}</h1>
         {data.additionalText && <p className="mb-[30px] text-center text-[18px] font-bold">{data.additionalText}</p>}

@@ -7,6 +7,7 @@ export interface IAnswer {
   slug: string
   question: string
   answer: string
+  additionalText?: string
   variables?: IVariable
 }
 
@@ -50,11 +51,18 @@ export const surveySlice = createSlice({
         }
       }
     },
+    removeLastAnswer: (state, action: PayloadAction<string>) => {
+      const surveySlug = action.payload
+      const currentSurvey = state.surveyState?.[surveySlug]
+      if (currentSurvey) {
+        currentSurvey.answers.pop()
+      }
+    },
     cleanSurveyState: (state) => {
       state.surveyState = undefined
     },
   },
 })
 
-export const { addAnswer, cleanSurveyState } = surveySlice.actions
+export const { addAnswer, cleanSurveyState, removeLastAnswer } = surveySlice.actions
 export const surveyReducer = surveySlice.reducer

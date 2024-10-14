@@ -20,7 +20,8 @@ export const ResultItem: React.FC<Props> = ({ className, answer }) => {
   })
   return (
     <div className={cn('w-full rounded-md bg-white p-3', className)} key={answer.slug}>
-      <p className="font-bold">{question}</p>
+      <h2 className="font-bold">{question}</h2>
+      {answer.additionalText && <h3>{answer.additionalText}</h3>}
       <p>- {answer.answer}</p>
     </div>
   )
