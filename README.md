@@ -4,7 +4,7 @@
 
 - `git clone` this repository
 - `npm install`
-- `npm run dev` start project
+- `npm run build && npm run start` start project
 
 ## Deployment
 
