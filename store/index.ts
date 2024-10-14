@@ -5,7 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { persistReducer } from 'redux-persist'
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
 
-import { surveyReducer } from './slices/surveySlice'
+import { surveyReducer } from './slices/surveySlice/surveySlice'
 
 const createNoopStorage = () => {
   return {

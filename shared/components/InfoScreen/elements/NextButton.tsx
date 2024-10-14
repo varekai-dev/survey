@@ -1,7 +1,7 @@
 /* eslint-disable tailwindcss/classnames-order */
 'use client'
 
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 import { Button } from '@/shared/ui'
 import { IInfoScreen } from '@/shared/types'
@@ -15,10 +15,8 @@ interface Props {
 
 export const NextButton: React.FC<Props> = ({ data }) => {
   const router = useRouter()
-  const pathname = usePathname()
-  const surveySlug = pathname.split('/')[2]
 
-  const slug = useGetNextSlug(data.dependsOnAnswer, surveySlug) || data.nextQuestionSlug
+  const slug = useGetNextSlug(data.dependsOnAnswer) || data.nextQuestionSlug
 
   const handleClick = () => {
     if (slug) {

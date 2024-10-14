@@ -2,10 +2,10 @@
 
 import React from 'react'
 
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
-import { useAppDispatch, useAppSelector } from '@/store'
-import { cleanSurveyState } from '@/store/slices'
+import { useAppDispatch } from '@/store'
+import { cleanSurveyState, useCurrentSurveySelector } from '@/store/slices'
 
 import { Button } from '../ui'
 import { cn } from '../utils'
@@ -18,14 +18,10 @@ interface Props {
 
 export const Results: React.FC<Props> = ({ className }) => {
   const dispatch = useAppDispatch()
-
-  const pathname = usePathname()
   const router = useRouter()
-  const surveyState = useAppSelector((state) => state.survey.surveyState)
+  const currentSurvey = useCurrentSurveySelector()
 
-  const surveySlug = pathname.split('/')[2]
-
-  const answers = surveyState?.[surveySlug].answers
+  const answers = currentSurvey?.answers
 
   const goHome = () => {
     router.push('/')

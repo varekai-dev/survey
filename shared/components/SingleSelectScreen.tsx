@@ -5,9 +5,9 @@ import React from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 
 import { useAppDispatch } from '@/store'
-import { addAnswer, useSelectAnswerBySlug } from '@/store/slices'
+import { addAnswer, useCurrentAnswerSelector } from '@/store/slices'
 
-import { useGetQuestionWithVariables } from '../../hooks'
+import { useGetQuestionWithVariables } from '../hooks'
 import type { IQuestionAnswer, ISingleSelectScreen } from '../types'
 import { Button } from '../ui'
 import { cn } from '../utils'
@@ -24,10 +24,10 @@ export const SingleSelectScreen: React.FC<Props> = ({ className, data }) => {
 
   const surveySlug = pathname.split('/')[2]
 
-  const storeAnswer = useSelectAnswerBySlug(data.slug, surveySlug)
+  const storeAnswer = useCurrentAnswerSelector()
 
   const router = useRouter()
-  const question = useGetQuestionWithVariables({ question: data.question, variables: data?.variables, surveySlug })
+  const question = useGetQuestionWithVariables({ question: data.question, variables: data?.variables })
 
   const handleClickButton = (answer: IQuestionAnswer) => {
     dispatch(

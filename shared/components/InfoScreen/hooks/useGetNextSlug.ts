@@ -1,8 +1,12 @@
+import { usePathname } from 'next/navigation'
+
 import { IInfoScreen } from '@/shared/types'
 
 import { useAppSelector } from '@/store'
 
-export const useGetNextSlug = (data: IInfoScreen['dependsOnAnswer'], surveySlug: string) => {
+export const useGetNextSlug = (data: IInfoScreen['dependsOnAnswer']) => {
+  const pathname = usePathname()
+  const surveySlug = pathname.split('/')[2]
   const surveyState = useAppSelector((state) => state.survey.surveyState)
 
   if (!data || !surveyState) {

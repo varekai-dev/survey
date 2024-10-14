@@ -1,3 +1,5 @@
+import { usePathname } from 'next/navigation'
+
 import { IVariable } from '@/shared/types'
 
 import { useAppSelector } from '@/store'
@@ -5,10 +7,11 @@ import { useAppSelector } from '@/store'
 interface IQuestionWithVariables {
   question: string
   variables?: IVariable
-  surveySlug: string
 }
 
-export const useGetQuestionWithVariables = ({ question, variables, surveySlug }: IQuestionWithVariables) => {
+export const useGetQuestionWithVariables = ({ question, variables }: IQuestionWithVariables) => {
+  const pathname = usePathname()
+  const surveySlug = pathname.split('/')[2]
   const surveyState = useAppSelector((state) => state.survey.surveyState)
   const currentSurvey = surveyState?.[surveySlug]
   if (!variables) {
